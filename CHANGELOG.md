@@ -1,4 +1,1 @@
-## CHANGELOG ##
-Version 0.9.0.0 -> Version 1.0.0.0 | x Changes</br>
-Release: [https://github.com/softbytesize/ISB](https://github.com/softbytesize/ISB)</br>
-> Some Text</br>>Line2
+## CHANGELOG ##Version suck -> Version my | 1 changes</br>Release: [https://google.com](https://google.com)</br>1
