@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" /> 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/style.css" /> 
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <meta name="title" content="ISB (I'm So Bored)">
     <meta name="description" content="ISB (I'm So Bored) is a network stress-testing utility for Windows developed by byte[size] Software.">
     <meta name="keywords" content="loic, ddos, penetration, testing, stress, windows, network">
@@ -17,13 +17,12 @@
     <title>ISB(I'm So Bored)</title>
 </head>
     <body>
-    <div id='header'>
-        <img src='logo.png' height="100px" width="auto">
+    <div id='about'>
+        <img src='assets/logo.png' height="100px" width="auto">
         <h3>Developed by byte[size] Software.</h3>
         <p>Licensed under <a href='https://raw.githubusercontent.com/softbytesize/ISB-Releases/main/LICENSE' target="_blank" rel="noopener noreferrer">Apache 2.0</a></p>
     </div>
     <hr>
-    <div id='about'>
         <p>ISB (I'm so bored) is a network-stress testing utility for Windows (.NET 5.0)</p>
         <h3>Features</h3>
         <table>
@@ -42,40 +41,65 @@
     <p>Frontpage: <a href='https://softbytesize.github.io/ISB/' target="_blank">https://softbytesize.github.io/ISB/</a></p>
     <p>Releases: <a href='https://github.com/softbytesize/ISB-Releases/releases' target="_blank" rel="noopener noreferrer">https://github.com/softbytesize/ISB-Releases/releases</a></p>
     <p>Credits: <a href='https://raw.githubusercontent.com/softbytesize/ISB/main/specialthanks' target="_blank" rel="noopener noreferrer">here</a> | Donate: <a href='https://raw.githubusercontent.com/softbytesize/ISB/main/donate' target="_blank" rel="noopener noreferrer">bitcoin</a></p>
-    </div>
-
-    
     <hr>
     <h2>Support</h2>
     <div id='helpstart'>
     <h3>Table Of Contents</h3>
         <ul>
-            <li>Versioning and Bugs<ul>
-                    <li><a href='#hi'>Known Issues</a></li>
+            <li>Links
+                <ul>
+                    <li><a href='#about'>About ISB</a></li>
+                    <li><a href='#ki'>Known Issues</a></li>
                     <li><a href='#br'>Bug Reporting</a></li>
                     <li><a href='#cl'>Change Logs</a></li>
                 </ul>
             </li>
             <li>Usage<ul>
-                    <li><a href='#usage_target'>Target</a></li>
-                    <li><a href='#usage_ti'>Target Info</a></li>
-                    <li><a href='#usage_attacks'>Attacks</a></li>
-                    <li><a href='#usage_logs'>Log</a></li>
-                    <li><a href='#usage_netmon'>Network Monitor</a></li>
+                    <li><a href='#basicusage'>Basic usage</a></li>
                 </ul>
             </li>
-            <li>Contact Support<ul>
-                <li><a href='#cu'>Discord</a></li>
-                <li><a href='#cu'>Email us</a></li>
+            <li>Application<ul>
+                <li><a href='#window'>Main Window</a></li>
+                <ul>
+                    <li><a href='#target'>Target</a></li>
+                    <li><a href='#log'>Log</a></li>
+                    <li><a href='#targetinfo'>Target Info</a></li>
+                    <li><a href='#attacks'>Attacks</a>
+                        <ul>
+                            <li><a href='#httpflood'>HTTP Flood</a></li>
+                            <li><a href='#udpflood'>UDP Flood</a></li>
+                            <li><a href='#tcpflood'>TCP Flood</a></li>
+                            <li><a href='#tcpportscan'>TCP Port Scan</a></li>
+                            <li><a href='#icmpflood'>ICMP Flood</a></li>
+                            <li><a href='#slowloris'>Slowloris</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='#editors'>Editors</a></li>
+                    <li><a href='#helpabout'>Help/About</a>
+                        <ul>
+                            <li><a href='#helpwindow'>Help Window</a></li>
+                            <li><a href='#aboutwindow'>About Window</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='#netmon'>Network Monitor</a></li>
+                </ul>
+                
                 </ul>
             </li>
         </ul>
     <hr>
     </div>
+    <div id='cu'>
+    <h3>Contact us</h3>
+        <p>Discord: <a href='https://discord.gg/9YNzrXDHxE'>open in Discord</a></p>
+        <p>Email: <img src='assets/email.png' style='vertical-align: middle' width='190px' height='auto'></p>
+    </div> 
+    <hr>
     <div id='ki'>
     <h3>Known Issues</h3>
         <ul>
             <li>HTTP Flood 'output to log' makes ISB unresponsive.</li>
+            <li>'Status' objects flicker, and are inaccurate.</li>
         </ul>
     </div>
     <hr>
@@ -84,19 +108,325 @@
         <p>Please report bugs to <a href='#cu'>Discord</a> or <a href='#cu'>email</a></p>
     </div>
     <hr>
+    <div id='basicusage'>
+    <h3>Basic Usage</h3>   
+        <p>With the <a href='#window'>main window</a> open, navigate to the <a href='#target'>target</a> section. Enter the IP or URL of your target (#1/#2). Select it with the "Set Target" button (#4). Assuming no errors are displayed (otherwise: see <a href='#target'>common errors</a>): Select your <a href='#attacks'>attack type</a> in the <a href='#attacks'>attacks</a> section. Set the variables for your attack (see: <a href='#httpflood'>http flood</a>, <a href='#udpflood'>udp flood</a>, <a href='#tcpflood'>tcp flood</a>, <a href='#tcpportscan'>tcp port scan</a>, <a href='#icmpflood'>icmp flood</a>, <a href='#slowloris'>slowloris</a>). Press "Start Attack"/"Start Scan" to begin, Press again to stop attack/scan.</p>
+    </div>
+    <hr>
+    <div id='window'>
+        <h2>Window</h2>
+        <img src='assets/screenshots/Window_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Title bar <i>[Application Name] - [Version]</i></td><td><b>2.</b> Process metrics: (left to right)<br>
+                        2a. Process CPU Usage: The amount of CPU used by the application.<br>
+                        2b. Process Memory Usage: The amount of Memory is use by the application.<br>
+                        2c. Process Threads: The amount of Threads opened/in use by the application.</td></tr>
+                <tr><td><b>3.</b> See <a href='#target'>target</a> for usage</td><td><b>4.</b> See <a href='#log'>log</a> for usage</td></tr>
+                <tr><td><b>5.</b> See <a href='#targetinfo'>target info</a> for usage</td><td><b>6.</b> See <a href='#attacks'>attacks</a> for usage</td></tr>
+                <tr><td><b>7.</b> See <a href='#editors'>editors</a> for usage</td><td><b>8.</b> See <a href='#aboutgroup'>about</a> for usage</td></tr>
+                <tr><td><b>9.</b> See <a href='#networkmonitor'>networkmonitor</a> for usage</td></tr>
+            </tbody>
+        </table>
+        <h3>Common Issues:</h3>
+            <ul>
+                <li><i>Process Memory Usage jumps high, and Application becomes unresponsive</i>: Please <a href='#cl'>contact us</a> as this is usually a bug</li>
+            </ul>
+    </div>
+        <hr>
+    <div id='target'>
+        <h2>Target</h2><p>Window Section #3</p>
+        <img src='assets/screenshots/Target_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> URL or IP of target. <i>"https://example.com"</i> for example.</td><td><b>2.</b> Port to target. Find commonly used ports <a href='https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'>here</a></td></tr>
+                <tr><td><b>3.</b> The IP of target, when set (#4 pressed)</td><td><b>4</b>Set the target with URL or IP in #1 and the port in #2</td></tr>
+            </tbody>
+        </table>
+        <h3>Common Errors:</h3>
+            <ul>
+                <li><i>Selected Error: Set target URL/Port first</i>: You must selet a target using #1 and #2, selecting it with #4</li>
+                <li><i>Target Down Error: Could not ping specified target. Is it down?</i>: Is the target URL you specified correct? Is the port selected open? Is it a valid URL?</li>
+            </ul>
+    </div>
+    <hr>
+        <div id='log'>
+        <h2>Log</h2><p>Window Section #4</p>
+        <img src='assets/screenshots/Log_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Log Window. Will output messages and errors.</td><td><b>2.</b> Clears the log window (not the logfile)</td></tr>
+                <tr><td><b>3.</b> Toggles the automatic scrolling of the log window.</td><td><b>4.</b> Copies the log window to the clipboard.</td></tr>
+                <tr><td><b>5.</b> Saves the log window output to file <i>(ISB log.log)</i></td><td><b>6.</b> Opens the logfile if one exists.</td></tr>
+            </tbody>
+        </table>
+            <p><b>Formatting:</b> [date time a/P] > *([error title]:) [message]</p>
+        *(conditional)
+        <h3>Common Errors:</h3>
+            <ul>
+                <li><i>Can't highlight</i>: Turn off autoscroll (#3)</li>
+                <li><i>Can't open log output (#6)</i>: Try saving the log first (#5).</li>
+                <li><i>Can't save log output (#5)</i>: The logfile <i>(ISB log.log)</i> will be saved in the same directory as the executable. Please <a href='cl'>contact us</a> if issues persist.</li>
+            </ul>
+    </div>
+    <hr>
+        <div id='targetinfo'>
+        <h2>Target Info</h2><p>Window Section #5</p>
+        <img src='assets/screenshots/TargetInfo_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Performs a <a href='https://en.wikipedia.org/wiki/WHOIS'>WHOIS</a> lookup on the target.</td><td><b>2.</b> Performs a <a href='https://en.wikipedia.org/wiki/Reverse_DNS_lookup'>DNS records lookup</a> on the target.</td></tr>
+                <tr><td><b>3.</b> Performs a <a href='https://en.wikipedia.org/wiki/Traceroute'>Traceroute</a> on the target</td><td><b>4.</b> Opens the target in browser*</td></tr>
+                <tr><td><b>5.</b> Pings the target X times. (#6)</td><td><b>6.</b> X times to ping the target. (#5)</td></tr>
+            </tbody>
+        </table>
+        <h3>Common Errors:</h3>
+            <ul>
+                <li><i>Browser doesn't open or gives error message</i>: If the browser doesn't open, verify the browser selected in <a href='#editors'>editors</a> is set correctly. If the browser returns one or many error messages, it is possible that the working directory has invalid characters in its name. Please <a href='cl'>contact us</a> if this issue persists</li>
+                <li><i>Target Down Error: Could not ping specified target. Is it down?</i>: Is the target URL you specified correct? Is the port selected open? Is it a valid URL?</li>
+            </ul>
+        <p>*Browser used can be set in the <a href='#editors'>editors</a> (Section #7 of the <a href='#window'>window</a>)</p>
+    </div>
+    <hr>
+        <div id='attacks'>
+        <h2>Attacks</h2><p>Window Section #6</p>
+        <img src='assets/screenshots/Attacks_Default_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Performs a HTTP Flood on the target.<br> For usage information <a href='#httpflood'>click here</a></td>
+                    <td><b>2.</b> Performs a UDP Flood on the target.<br> For usage information <a href='#tcp'>click here</a></tr>
+                <tr><td><b>3.</b> Performs a TCP Flood on the target.<br> For usage information <a href='#udpflood'>click here</a></td>
+                    <td><b>4.</b> Performs a TCP Port Scan on the target.<br> For usage information <a href='#tcpportscan'>click here</a></td></tr>
+                <tr><td><b>5.</b> Performs a ICMP Flood on the target.<br> For usage information <a href='#icmpflood'>click here</a></td>
+                    <td><b>6.</b> Performs a Slowloris attack on the target.<br> For usage information <a href='#udpflood'>click here</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+        <hr>
+        <div id='httpflood'>
+        <h2>Attacks - HTTP Flood</h2><p>Window Section #6 Attack #1</p>
+        <img src='assets/screenshots/HTTPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Default: '/' Sets the subsite to use when GET (#7) is enabled*</td>
+                    <td><b>2.</b> Set the interval (in milliseconds) between sending packets to target.</td></tr>
+                <tr><td><b>3.</b> Set the time (in milliseconds) for the target server to keep the connection open</td>
+                    <td><b>4.</b> The amount of threads the application should use to attack the target</td></tr>
+                <tr><td><b>5.</b> Use a random subsite? The length of the random string can be changed in #6</td>
+                    <td><b>6.</b> Random Subsite (#5) Length in bytes <i>Higher = slower (more data) / Lower = faster (more traffic)</i></tr>
+                <tr><td><b>7.</b> Use GET Protocol? Default is POST protocol.</td>
+                    <td><b>8.</b> Should we wait for the server to respond to the last request sent?</td></tr>
+                <tr><td><b>9.</b> Should we declare GZIP encoding in our headers? <i>'Accept-Encoding: gzip, deflate'</i></td>
+                    <td><b>10.</b> Starts/Stops the attack</td></tr>
+                <tr><td><b>11.</b> Sockets connected successfully</td>
+                    <td><b>12.</b> Packets sent successfully</td></tr>
+                <tr><td><b>13.</b> Responses from target recieved (if #8 is set)</td>
+                    <td><b>14.</b> Sockets/Packets that have failed to open/send</td></tr>
+                <tr><td><b>15.</b> Output headers sent to the log window?(Window Section #7)**</td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+                <li><i>Target error: Target Not Set!</i>: Set your <a href='#target'>target first</a></li>
+                <li><i>(#14) Failed is the only status object increasing</i>: Perhaps your target is down, have you tried <a href='#targetinfo'>pinging</a>(#5) it? Or <a href='#targetinfo'> opening it in a browser?</a> (#4) If issues persist, alter your attack variables.</li>
+            </ul>
+            <p>*Example: <i>'/search?q='</i> Used in conjunction with Random Subsite (#5) and Use GET (#7) will continually poll target with a random search query.</p>
+            <p>**When enabled; this will cause unresponsiveness and crashing of the application. It is a <a href='#ki'>known issue</a>. Please do not report it to support...</p>
+    </div>
+        <hr>
+        <div id='udpflood'>
+        <h2>Attacks - UDP Flood</h2><p>Window Section #6 Attack #2</p>
+        <img src='assets/screenshots/UDPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Set the interval (in milliseconds) between sending packets to target.</td>
+                    <td><b>2.</b> Sets the size of the buffer in the packet.</td></tr>
+                <tr><td><b>3.</b> The amount of threads the application should use to attack the target</td>
+                    <td><b>4.</b> Starts/Stops the attack</td></tr>
+                <tr><td><b>5.</b> Sockets connected successfully</td>
+                    <td><b>6.</b> Packets sent successfully</td></tr>
+                <tr><td><b>7.</b> Sockets/Packets that have failed to open/send</td><td></td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+                <li><i>Target error: Target Not Set!</i>: Set your <a href='#target'>target first</a></li>
+                <li><i>(#14) Failed is the only status object increasing</i>: Perhaps your target is down, have you tried <a href='#targetinfo'>pinging</a>(#5) it? Or <a href='#targetinfo'> opening it in a browser?</a> (#4) If issues persist, alter your attack variables.</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='tcpflood'>
+        <h2>Attacks - TCP Flood</h2><p>Window Section #6 Attack #3</p>
+        <img src='assets/screenshots/TCPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Set the interval (in milliseconds) between sending packets to target.</td>
+                    <td><b>2.</b> Sets the size of the buffer in the packet.</td></tr>
+                <tr><td><b>3.</b> The amount of threads the application should use to attack the target</td>
+                    <td><b>4.</b> Starts/Stops the attack</td></tr>
+                <tr><td><b>5.</b> Sockets connected successfully</td>
+                    <td><b>6.</b> Packets sent successfully</td></tr>
+                <tr><td><b>7.</b> Sockets/Packets that have failed to open/send</td><td></td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+                <li><i>Target error: Target Not Set!</i>: Set your <a href='#target'>target first</a></li>
+                <li><i>(#14) Failed is the only status object increasing</i>: Perhaps your target is down, have you tried <a href='#targetinfo'>pinging</a>(#5) it? Or <a href='#targetinfo'> opening it in a browser?</a> (#4) If issues persist, alter your attack variables.</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='tcpflood'>
+        <h2>Attacks - TCP Port Scan</h2><p>Window Section #6 Attack(ish) #4</p>
+        <img src='assets/screenshots/TCPPortScan_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> The first port to scan (1-35565)</td>
+                    <td><b>2.</b> The last port to scan (1-35565)</td></tr>
+                <tr><td><b>3.</b> The time to wait (in milliseconds) for a reply.</td>
+                    <td><b>4.</b> Starts/Stops the scan</td></tr>
+                <tr><td><b>5.</b> Total ports OPEN</td>
+                    <td><b>6.</b> Total ports 'uknown' error presumed DOWN</td></tr>
+                <tr><td><b>7.</b> Total ports 'refused' error presumed DOWN</td>
+                    <td><b>8.</b> Total ports 'timed out' error presumed DOWN*</td></tr>
+                <tr><td><b>9.</b> Total ports DOWN</td>
+                    <td><b>10.</b> Outputs "Port X UP" to log window (#4)</td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+                <li><i>*X port should be open</i>: Double check your <a href='#target'>target first</a>, increase timeout (#3) until port reports UP. The application automatically adjusts the timeout based at the start of the scan (timeout = timout+ping roundtrip)</li>
+                <li><i>(#14) Failed is the only status object increasing</i>: Perhaps your target is down, have you tried <a href='#targetinfo'>pinging</a> (Window Section #5-5) it? Or <a href='#targetinfo'> opening it in a browser?</a> (Window Section #5-6) Maybe the target doesn't have any ports open...</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='icmpflood'>
+        <h2>Attacks - ICMP Flood</h2><p>Window Section #6 Attack #5</p>
+        <img src='assets/screenshots/ICMPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Set the interval (in milliseconds) between<br> sending packets to target.</td>
+                    <td><b>2.</b> Sets the timeout of the current connection.</td></tr>
+                <tr><td><b>3.</b> Sets the size of the buffer in the packet.</td>
+                    <td><b>4.</b> The amount of threads the application should use to attack the target</td></tr>
+                <tr><td><b>5.</b> Starts/Stops the attack</td>
+                    <td><b>6.</b> Packets sent successfully</td></tr>
+                <tr><td><b>7.</b> Packets that have failed to send</td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+            <li><i>(#7) Failed is the only status object increasing</i>: Perhaps your target is down, have you tried <a href='#targetinfo'>pinging</a> (Window Section #5-5) it? Or <a href='#targetinfo'> opening it in a browser?</a> (Window Section #5-6) If this has been verified, try increasing the interval (#1)/timeout (#2)</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='slowloris'>
+        <h2>Attacks - Slowloris</h2><p>Window Section #6 Attack #6</p>
+        <img src='assets/screenshots/Slowloris_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Set the interval (in milliseconds) between<br> sending packets to target.</td>
+                    <td><b>2.</b> The amount of threads the application should use to attack the target</td></tr>
+                <tr><td><b>3.</b> Starts/Stops the attack</td><td><b>4.</b> Packets sent successfully</td></tr>
+                <tr><td><b>4.</b> Packets sent successfully</td><td><b>6.</b> Packets that have failed to send</td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+            <li><i>(#6) Failed is the only status object increasing</i>: Perhaps your target is down, have you tried <a href='#targetinfo'>pinging</a> (Window Section #5-5) it? Or <a href='#targetinfo'> opening it in a browser?</a> (Window Section #5-6) If this has been verified, try increasing the interval (#1)</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='editors'>
+        <h2>Editors</h2><p>Window Section #7</p>
+        <img src='assets/screenshots/BrowserEditor_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                 <tr><td><b>1.</b> Location path of the text editor.<br>Defaults to system default from registry.</td>
+                    <td><b>2.</b> Location path if the web browser.<br>Defaults to system default from registry.</td></tr>
+                <tr><td><b>3.</b> Opens the <i>File Dialog</i> to pick the text editor used*</td>
+                    <td><b>4.</b> Opens the <i>File Dialog</i> to pick the web browser used*</td></tr>
+            </tbody>
+        </table>
+            <h3>Common Errors:</h3>
+            <ul>
+            <li><i>File error: File either doesn't exist or isn't a supported format</i>: Is the file selected an <i>exe</i>cutable?* Does the path exist?</li>
+            <li><i>Text editor won't open the log (from Window Section #5-6); single/multiple errors, editor launches to new file</i>: Some text editors ask for arguments in the path line, add them manually (#1). Consult your text editors documentation for more information</li>
+            <li><i>Browser won't open the target (from Window Section #4-6); single/multiple errors, browser launches to homepage</i>: Some browsers ask for arguments in the path line, add them manually (#2). Consult your browsers documentation for more information</li>
+            </ul>
+            <p>*Accepts: exe, .exe, *.exe</p>
+    </div>
+        <hr>
+        <div id='helpabout'>
+        <h2>Help/About</h2><p>Window Section #8</p>
+        <img src='assets/screenshots/HelpAbout_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Launches the 'Help' window. <b>Keyboard Shortcut: F1</b> [Hint: Help window displays this page]</td></tr>
+                <tr><td><b>2.</b> Location the 'About' window <b>Keyboard Shortcut: F2</b></tr>
+            </tbody>
+        </table>
+        <sub style='font-size:2px'>Combo breaker?</sub>
+    </div>
+         <hr>
+        <div id='helpwindow'>
+        <h2>Help Window</h2><p>Help Window > Window Section #8-1</p>
+        <img src='assets/screenshots/HelpWindow_Numbered.png' width='35%' height='auto'>
+        <h3>Common Errors:</h3>
+            <ul>
+            <li><i>404 Error / File not found error</i>: Try again later. Please <a href='cl'>contact us</a> if issue persist.</li>
+            </ul>
+        <p>*You are here... 50/50 shot of how you got here*</p>
+    </div>
+        <hr>
+        <div id='aboutwindow'>
+        <h2>About Window</h2><p>About Window > Window Section #8-2</p>
+        <img src='assets/screenshots/AboutWindow_Numbered.png' width='auto' height='35%'>
+            <table>
+            <tbody>
+                <tr><td><b>1.</b> Displays the Application name, Version, and Developer.</td></tr>
+                <tr><td><b>2.</b> Shows the licenses in use. <i>Note: Usage of this software implies license agreement.</i></tr>
+                <tr><td><b>3.</b> Shows the packages used, and accredits those who help to develop/maintain ISB</td></tr>
+                <tr><td><b>4.</b> Shows the BTC address in which donations are accepted. Thanks! :)</td></tr>
+                <tr><td><b>5.</b> Opens browser to the application repository</td></tr>
+            </tbody>
+        </table>
+        <h3>Common Errors:</h3>
+            <ul>
+            <li><i>Window took a long time to open</i>: The application is retrieving the content of the window from the server. The content is saved to the registry
+            for faster loading in future.</li>
+            <li><i>"Failed to retrieve..." / "Failed to retrieve content from server..."</i>: Please try opening/reopening the window. If this doesn't work, try again in 10 minutes. If issues persist please <a href='cl'>contact us</a>.</li>
+            </ul>
+        <p>*You are here... 50/50 shot of how you got here*</p>
+    </div>
+         <hr>
+        <div id='netmon'>
+        <h2>Network Monitor</h2><p>Window Section #9</p>
+        <img src='assets/screenshots/NetworkMonitor_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> The adapters detected by the monitor</td>
+                    <td><b>2.</b> Current status of selected adapter</td></tr>
+                <tr><td><b>3.</b> Flushes DNS (Result outputs to log window)<br> Executes: <i>ipconfig.exe /flushdns</i> </td>
+                    <td><b>4.</b> Renews All Adapters (Result outputs to log window)<br>Executes: <i>ipconfig.exe /renew</i></tr>
+            </tbody>
+        </table>
+        <h3>Common Errors:</h3>
+            <ul>
+            <li><i>Adapter was not detected in application</i>: Check that the adapter is enabled/installed, if it is: please <a href='cl'>contact us</a> to request integration for your adapter.</li>
+            <li><i>Flush DNS fails</i>: Check that the application is running with Administrator rights.</li>
+            <li><i>Renew Adapters fails</i>: Check that the application is running with Administrator rights.</li>
+            </ul>
+    </div>
+    <hr>
     <div id='cl'>
     <h3>Change Logs</h3>
         <p><script></script><a href='https://github.com/softbytesize/ISB-Releases/releases/latest' target="_blank" rel="noopener noreferrer">Click here</a> for latest release.</p>
         <ul>
             <!--<li>VERSION<ul><li>ITEMS</li></ul></li> -->
-        <li>0.2.0.0<ul><li>New stuff</li></ul></li>
+        <li>Version 223223 => Version 23233232<br>Release: <a href='https://google.com'>https://google.com</a><br>(2 changes)<ul><li>1</li><li>2</li></ul></li>
         </ul>
+        
     </div>
-    <hr>
-    <div id='cu'>
-    <h3>Contact us</h3>
-        <p>Discord: <a href='https://discord.gg/9YNzrXDHxE'>open in Discord</a></p>
-        <p>Email: <img src='email.png' style='vertical-align: middle' width='190px' height='auto'></p>
-    </div> 
     </body>
 </html>
