@@ -1,1 +1,3 @@
 https://softbytesize.github.io/ISB/index.html
+https://softbytesize.github.io/ISB/lang/es.html
+https://softbytesize.github.io/ISB/lang/fr.html
