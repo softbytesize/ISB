@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" /> 
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <meta name="title" content="ISB (I'm So Bored)">
+    <meta name="description" content="ISB (I'm So Bored) est un utilitaire de test de stress réseau pour Windows développé par byte[size] Software.">
+    <meta name="keywords" content="loic, ddos, penetration, testing, stress, windows, network">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html ; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="byte[size] Software">
+
+    <title>ISB(I'm So Bored)</title>
+</head>
+    <body>
+    <div id='about'>
+        <img src='../assets/logo.png' height="100px" width="auto">
+        <h3>Développé par byte[size] Software.</h3>
+        <p>Licence sous <a href='https://raw.githubusercontent.com/softbytesize/ISB-Releases/main/LICENSE' target="_blank" rel="noopener noreferrer">Apache 2.0</a></p>
+    </div>
+    <hr>
+        <p>ISB (I'm so bored) est un utilitaire de test de stress réseau pour Windows (.NET 5.0)</p>
+        <h3>Caractéristiques</h3>
+        <table>
+            <thead>
+                <tr><th>Attacks</th><th>Sniffing</th><th>Logging</th><th>Support</th></tr>
+            </thead>
+            <tbody style='text-align: center'>
+                <tr><td>HTTP Flood</td><td>Port Scanning</td><td>Log to file</td><td>Comprehensive Documentation</td></tr>
+                <tr><td>UDP Flood</td><td>WHOIS Lookup</td><td>Log to clipboard</td><td>Discord support</td></tr>
+                <tr><td>TCP Flood</td><td>DNS Lookup</td><td>Dedicated UI Log</td><td>Email support</td></tr>
+                <tr><td>ICMP Flood</td><td>Traceroute</td><td>Surveillance du réseau</td><td>Vérification automatique des mises à jour</td></tr>
+            </tbody>
+        </table>
+        
+        <p>Octet [taille] Logiciel: <a href='https://github.com/softbytesize' target="_blank" rel="noopener noreferrer">https://github.com/softbytesize</a></p>
+    <p>Page d'accueil: <a href='https://softbytesize.github.io/ISB/' target="_blank">https://softbytesize.github.io/ISB/</a></p>
+    <p>Les sorties: <a href='https://github.com/softbytesize/ISB-Releases/releases' target="_blank" rel="noopener noreferrer">https://github.com/softbytesize/ISB-Releases/releases</a></p>
+    <p>Crédits: <a href='https://raw.githubusercontent.com/softbytesize/ISB/main/specialthanks' target="_blank" rel="noopener noreferrer">ici</a> | Don: <a href='https://raw.githubusercontent.com/softbytesize/ISB/main/donate' target="_blank" rel="noopener noreferrer">bitcoin</a></p>
+    <hr>
+    <div id='helpstart'>
+    <p>Languages: [<a href='../index.html'>english</a>] [french] [<a href='es.html'>spanish</a>] (Natively written in English. Translations may be... inaccurate)</p>
+    <h2>Support</h2>
+    <h3>Table des matières</h3>
+        <ul>
+            <li>Liens
+                <ul>
+                    <li><a href='#about'>About ISB</a></li>
+                    <li><a href='#cu'>Nous contacter</a></li>
+                    <li><a href='#ki'>Les problèmes connus</a></li>
+                    <li><a href='#br'>Rapport de bogues</a></li>
+                    <li><a href='#cl'>Change Logs</a></li>
+                </ul>
+            </li>
+            <li>Utilisation<ul>
+                    <li><a href='#basicusage'>Utilisation de base</a></li>
+                </ul>
+            </li>
+            <li>Application<ul>
+                <li><a href='#window'>Fenêtre principale</a></li>
+                <ul>
+                    <li><a href='#target'>Target</a></li>
+                    <li><a href='#log'>Log</a></li>
+                    <li><a href='#targetinfo'>Information sur la cible</a></li>
+                    <li><a href='#attacks'>Attacks</a>
+                        <ul>
+                            <li><a href='#httpflood'>HTTP Flood</a></li>
+                            <li><a href='#udpflood'>UDP Flood</a></li>
+                            <li><a href='#tcpflood'>TCP Flood</a></li>
+                            <li><a href='#tcpportscan'>TCP Port Scan</a></li>
+                            <li><a href='#icmpflood'>ICMP Flood</a></li>
+                            <li><a href='#slowloris'>Slowloris</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='#editors'>Editors</a></li>
+                    <li><a href='#helpabout'>Help/About</a>
+                        <ul>
+                            <li><a href='#helpwindow'>Fenêtre d'aide</a></li>
+                            <li><a href='#aboutwindow'>About Window</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='#netmon'>Moniteur réseau</a></li>
+                </ul>
+                
+                </ul>
+            </li>
+        </ul>
+    <hr>
+    </div>
+    <div id='cu'>
+    <h3>Contactez-nous</h3>
+        <p>Discord: <a href='https://discord.gg/9YNzrXDHxE'>ouvert dans Discord</a></p>
+        <p>Email: <img src='../assets/email.png' style='vertical-align: middle' width='190px' height='auto'></p>
+    </div> 
+    <hr>
+    <div id='ki'>
+    <h3>Problèmes connus</h3>
+        <ul>
+            <li>HTTP Flood 'output to log' rend l'EIB non réactif.</li>
+            <li>Les objets "Statut" clignotent, et sont imprécis.</li>
+        </ul>
+    </div>
+    <hr>
+    <div id='br'>
+    <h3>Rapports de bogues</h3>   
+        <p>Veuillez signaler les bugs sur <a href='#cu'>Discord</a> ou <a href='#cu'>email</a></p>
+    </div>
+    <hr>
+    <div id='basicusage'>
+    <h3>Utilisation de base</h3>   
+        <p>Avec la <a href='#window'>fenêtre principale</a> ouverte, naviguez vers la section <a href='#target'>target</a> Saisissez l'IP ou l'URL de votre cible (#1/#2). Sélectionnez-la avec le bouton "Set Target" (#4). En supposant qu'aucune erreur ne s'affiche (sinon: voir <a href='#target'>common errors</a>): Sélectionnez votre <a href='#attacks'>type d'attaque</a> dans la section <a href='#attacks'>attacks</a> Définissez les variables de votre attaque (voir: <a href='#httpflood'>http flood</a>, <a href='#udpflood'>udp flood</a>, <a href='#tcpflood'>tcp flood</a>, <a href='#tcpportscan'>tcp port scan</a>, <a href='#icmpflood'>icmp flood</a>, <a href='#slowloris'>slowloris</a>). Appuyez sur "Start Attack"/"Start Scan" pour commencer, appuyez à nouveau pour arrêter l'attaque/le scan.</p>
+    </div>
+    <hr>
+    <div id='window'>
+        <h2>Fenêtre</h2>
+        <img src='../assets/screenshots/Window_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Barre de titre <i>[Nom de l'application] - [Version]</i></td><td><b>2.</b> Métriques du processus: (de gauche à droite)<br>
+                        2a. Utilisation du CPU du processus: La quantité de CPU utilisée par l'application.<br>
+                        2b. Utilisation de la mémoire du processus: La quantité de mémoire est utilisée par l'application.<br>
+                        2c. Threads de processus: La quantité de Threads ouverts/utilisés par l'application.</td></tr>
+                <tr><td><b>3.</b> Voir <a href='#target'>target</a> pour l'utilisation</td><td><b>4.</b> Voir <a href='#log'>log</a> pour l'utilisation</td></tr>
+                <tr><td><b>5.</b> Voir <a href='#targetinfo'>target info</a> pour l'utilisation</td><td><b>6.</b> Voir <a href='#attacks'>attacks</a> pour l'utilisation</td></tr>
+                <tr><td><b>7.</b> Voir <a href='#editors'>editors</a> pour l'utilisation</td><td><b>8.</b> Voir <a href='#aboutgroup'>about</a> pour l'utilisation</td></tr>
+                <tr><td><b>9.</b> Voir <a href='#networkmonitor'>networkmonitor</a> pour l'utilisation</td></tr>
+            </tbody>
+        </table>
+        <h3>Problèmes courants:</h3>
+            <ul>
+                <li><i>L'utilisation de la mémoire du processus fait des bonds importants, et l'application ne répond plus</i>: Veuillez <a href='#cl'>nous contacter</a> car il s'agit généralement d'un bug</li>
+            </ul>
+    </div>
+        <hr>
+    <div id='target'>
+        <h2>Target</h2><p>Section de la fenêtre #3</p>
+        <img src='../assets/screenshots/Target_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> URL ou IP de la cible. <i>"https://example.com"</i> par exemple.</td><td><b>2.</b> Port à cibler. Trouvez les ports couramment utilisés <a href='https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers'>ici</a></td></tr>
+                <tr><td><b>3.</b> L'IP de la cible, lorsqu'elle est définie (#4 enfoncé)</td><td><b>4</b> Définir la cible avec l'URL ou l'IP en #1 et le port en #2</td></tr>
+            </tbody>
+        </table>
+        <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>Erreur sélectionnée: Définir l'URL/Port cible en premier</i>: Vous devez selet une cible en utilisant #1 et #2, en la sélectionnant avec #4</li>
+                <li><i>Target Down Error: Impossible d'envoyer un ping à la cible spécifiée. Est-elle en panne ? </i>: L'URL de la cible que vous avez spécifiée est-elle correcte ? Le port sélectionné est-il ouvert ? S'agit-il d'une URL valide?</li>
+            </ul>
+    </div>
+    <hr>
+        <div id='log'>
+        <h2>Log</h2><p>Section de fenêtre #4</p>
+        <img src='../assets/screenshots/Log_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Fenêtre de journal. Éditera les messages et les erreurs.</td><td><b>2.</b> Efface la fenêtre de journal (pas le fichier journal)</td></tr>
+                <tr><td><b>3.</b> Bascule le défilement automatique de la fenêtre du journal.</td><td><b>4.</b> Copie la fenêtre du journal dans le presse-papiers.</td></tr>
+                <tr><td><b>5.</b> Enregistre la sortie de la fenêtre de journal dans le fichier <i>(ISB log.log)</i></td><td><b>6.</b> Ouvre le fichier de journal s'il existe.</td></tr>
+            </tbody>
+        </table>
+            <p><b>Formatage:</b> [date heure a/P] > *([titre de l'erreur] :) [message]</p>
+        *(conditionnel)
+        <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>Can't can't highlight</i>: Désactiver l'autoscroll (#3)</li>
+                <li><i>On ne peut pas ouvrir la sortie du journal (#6)</i>: Essayez de sauvegarder le journal en premier (#5).</li>
+                <li><i>Can't save log output (#5)</i>: Le fichier journal <i>(ISB log.log)</i> sera enregistré dans le même répertoire que l'exécutable. Veuillez <a href='#cl'>nous contacter</a> si les problèmes persistent.</li>
+            </ul>
+    </div>
+    <hr>
+        <div id='targetinfo'>
+        <h2>Informations sur la cible</h2><p>Section de la fenêtre #5</p>
+        <img src='../assets/screenshots/TargetInfo_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Effectue une <a href='https://en.wikipedia.org/wiki/WHOIS'>WHOIS</a> recherche sur la cible.</td><td><b>2.</b> Effectue une <a href='https://en.wikipedia.org/wiki/Reverse_DNS_lookup'>recherche d'enregistrements DNS</a> sur la cible.</td></tr>
+                <tr><td><b>3.</b> Effectue une <a href='https://en.wikipedia.org/wiki/Traceroute'>Traceroute</a> sur la cible</td><td><b>4.</b> Ouvre la cible dans le navigateur*</td></tr>
+                <tr><td><b>5.</b> Ping la cible X fois. (#6)</td><td><b>6.</b> X fois pour envoyer un ping à la cible. (#5)</td></tr>
+            </tbody>
+        </table>
+        <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>Le navigateur ne s'ouvre pas ou donne un message d'erreur</i>: Si le navigateur ne s'ouvre pas, vérifiez que le navigateur sélectionné dans <a href='#editors'>editors</a> est correctement défini. Si le navigateur renvoie un ou plusieurs messages d'erreur, il est possible que le répertoire de travail ait des caractères invalides dans son nom. Veuillez <a href='#cl'>nous contacter</a> si ce problème persiste</li>
+                <li><i>Target Down Error: Impossible d'envoyer un ping à la cible spécifiée. Est-elle en panne ? </i>: L'URL de la cible que vous avez spécifiée est-elle correcte ? Le port sélectionné est-il ouvert ? S'agit-il d'une URL valide?</li>
+            </ul>
+        </p>*Le navigateur utilisé peut être défini dans le <a href='#editors'>editors</a> (section #7 du <a href='#window'>fenêtre</a>)</p>
+    </div>
+    <hr>
+        <div id='attaques'>
+        <h2>Attacks</h2><p>Section fenêtre #6</p><p>
+        <img src='../assets/screenshots/Attacks_Default_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Effectue une inondation HTTP sur la cible.<br>Pour des informations sur l'utilisation <a href='#httpflood'>cliquez ici</a></td>
+                    <td><b>2.</b> Effectue un Flood UDP sur la cible.<br>Pour des informations d'utilisation <a href='#tcp'>cliquez ici</a></tr>
+                <tr><td><b>3.</b> Effectue un Flood TCP sur la cible.<br>Pour des informations d'utilisation <a href='#udpflood'>cliquez ici</a></td>
+                    <td><b>4.</b> Effectue un scan de port TCP sur la cible.<br>Pour des informations d'utilisation <a href='#tcpportscan'>cliquez ici</a></td></tr>
+                <tr><td><b>5.</b> Effectue une inondation ICMP sur la cible.<br>Pour des informations sur l'utilisation <a href='#icmpflood'>cliquez ici</a></td>
+                    <td><b>6.</b> Effectue une attaque Slowloris sur la cible.<br>Pour des informations d'utilisation <a href='#udpflood'>cliquez ici</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+        <hr>
+        <div id='httpflood'>
+        <h2>Attaque - Flood HTTP</h2><p>Section de fenêtre #6 Attaque #1</p><p>
+        <img src='../assets/screenshots/HTTPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Défaut: '/' Définit le sous-site à utiliser lorsque le GET (#7) est activé*</td>
+                    <td><b>2.</b> Définir l'intervalle (en millisecondes) entre l'envoi de paquets à la cible.</td></tr>
+                <tr><td><b>3.</b> Définir le temps (en millisecondes) pendant lequel le serveur cible doit garder la connexion ouverte</td>
+                    <td><b>4.</b> La quantité de threads que l'application doit utiliser pour attaquer la cible</td></tr>
+                <tr><td><b>5.</b> Utiliser un sous-site aléatoire ? La longueur de la chaîne aléatoire peut être modifiée en #6</td>
+                    <td><b>6.</b> Sous-site aléatoire (#5) Longueur en octets <i>Haut = plus lent (plus de données) / Bas = plus rapide (plus de trafic)</i></tr>
+                <tr><td><b>7.</b> Utiliser le protocole GET ? La valeur par défaut est le protocole POST.</td>
+                    <td><b>8.</b> Faut-il attendre que le serveur réponde à la dernière requête envoyée ? </td></tr>
+                <tr><td><b>9.</b> Devons-nous déclarer l'encodage GZIP dans nos en-têtes ? <i>"Accept-Encoding: gzip, deflate'</i></td>
+                    <td><b>10.</b> Démarre/arrête l'attaque</td></tr>
+                <tr><td><b>11.</b> Sockets connectés avec succès</td>
+                    <td><b>12.</b> Paquets envoyés avec succès</td></tr>
+                <tr><td><b>13.</b> Réponses de la cible reçues (si #8 est défini)</td>
+                    <td><b>14.</b> Sockets/Packets qui n'ont pas réussi à s'ouvrir/envoyer</td></tr>
+                <tr><td><b>15.</b> En-têtes de sortie envoyés à la fenêtre de journal ?(Section de la fenêtre #7)**</td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>Erreur de cible: Target Not Set!</i>: Définissez votre <a href='#target'>cible d'abord</a></li>
+                <li><i>(#14) Failed est le seul objet d'état qui augmente</i>: Votre cible est peut-être en panne, avez-vous essayé <a href='#targetinfo'>de laping</a>(#5) ? Ou <a href='#targetinfo'> de l'ouvrir dans un navigateur ?</a> (#4) Si les problèmes persistent, modifiez vos variables d'attaque.</li>
+            </ul>
+            <p>*Exemple: <i>'/search?q='</i> Utilisé en conjonction avec Random Subsite (#5) et Use GET (#7) sondera continuellement la cible avec une requête de recherche aléatoire.</p>
+            <p>**Lorsqu'elle est activée ; cela provoquera une absence de réponse et un plantage de l'application. C'est un <a href='#ki'>problème connu</a> Veuillez ne pas le signaler à l'assistance..</p>
+    </div>
+        <hr>
+        <div id='udpflood'>
+        <h2>Attaques - Flood UDP</h2><p>Section de fenêtre #6 Attaque #2</p>
+        <img src='../assets/screenshots/UDPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Définir l'intervalle (en millisecondes) entre l'envoi de paquets à la cible.</td>
+                    <td><b>2.</b> Définit la taille du tampon dans le paquet.</td></tr>
+                <tr><td><b>3.</b> La quantité de threads que l'application doit utiliser pour attaquer la cible</td>
+                    <td><b>4.</b> Démarre/arrête l'attaque</td></tr>
+                <tr><td><b>5.</b> Sockets connectés avec succès</td>
+                    <td><b>6.</b> Paquets envoyés avec succès</td></tr>
+                <tr><td><b>7.</b> Sockets/Packets qui n'ont pas réussi à s'ouvrir/envoyer</td><td></td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>Erreur de cible: Target Not Set!</i>: Définissez votre <a href='#target'>cible d'abord</a></li>
+                <li><i>(#14) Failed est le seul objet d'état qui augmente</i>: Votre cible est peut-être en panne, avez-vous essayé <a href='#targetinfo'>de laping</a>(#5) ? Ou <a href='#targetinfo'> de l'ouvrir dans un navigateur ?</a> (#4) Si les problèmes persistent, modifiez vos variables d'attaque.</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='tcpflood'>
+        <h2>Attaques - Flood TCP</h2><p>Section de fenêtre #6 Attaque #3</p>
+        <img src='../assets/screenshots/TCPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Définissez l'intervalle (en millisecondes) entre l'envoi de paquets à la cible.</td>
+                    <td><b>2.</b> Définit la taille du tampon dans le paquet.</td></tr>
+                <tr><td><b>3.</b> La quantité de threads que l'application devrait utiliser pour attaquer la cible</td>
+                    <td><b>4.</b> Démarre/arrête l'attaque</td></tr>
+                <tr><td><b>5.</b> Sockets connectés avec succès</td>
+                    <td><b>6.</b> Paquets envoyés avec succès</td></tr>
+                <tr><td><b>7.</b> Sockets/Packets qui n'ont pas réussi à s'ouvrir/envoyer</td><td></td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>Erreur de cible: Target Not Set!</i>: Définissez votre <a href='#target'>cible d'abord</a></li>
+                <li><i>(#14) Failed est le seul objet d'état qui augmente</i>: Votre cible est peut-être en panne, avez-vous essayé <a href='#targetinfo'>de laping</a>(#5) ? Ou <a href='#targetinfo'> de l'ouvrir dans un navigateur ?</a> (#4) Si les problèmes persistent, modifiez vos variables d'attaque.</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='tcpportscan'>
+        <h2>Attaque - Scan du port TCP</h2><p>Section de fenêtre #6 Attaque(ish) #4</p>
+        <img src='../assets/screenshots/TCPPortScan_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Le premier port à scanner (1-35565)</td>
+                    <td><b>2.</b> Le dernier port à scanner (1-35565)</td></tr>
+                <tr><td><b>3.</b> Le temps d'attente (en millisecondes) pour une réponse.</td>
+                    <td><b>4.</b> Démarre/arrête le scan</td></tr>
+                <tr><td><b>5.</b> Total des ports OUVERTS</td>
+                    <td><b>6.</b> Total des ports 'uknown' erreur présumée DOWN</td></tr>
+                <tr><td><b>7.</b> Total des ports 'refusés' erreur présumée DOWN</td>
+                    <td><b>8.</b> Total des ports 'timed out' erreur présumée DOWN*</td></tr>
+                <tr><td><b>9.</b> Total des ports DOWN</td>
+                    <td><b>10.</b> Sort "Port X UP" dans la fenêtre de journal (#4)</td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+                <li><i>*Le port X devrait être ouvert</i>: Vérifiez deux fois votre <a href='#target'>cible d'abord</a>, augmentez le timeout (#3) jusqu'à ce que le port signale UP. L'application ajuste automatiquement le timeout basé au début du scan (timeout = timout+ping roundtrip)</li>
+                <li><i>(#14) Échec est le seul objet d'état qui augmente</i>: Peut-être que votre cible est en panne, avez-vous essayé <a href='#targetinfo'>de laping</a> (Fenêtre Section #5-5) ? Ou <a href='#targetinfo'>de l'ouvrir dans un navigateur?</a> (Section de la fenêtre #5-6) Peut-être que la cible n'a pas de ports ouverts...</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='icmpflood'>
+        <h2>Attaques - Flood ICMP</h2><p>Section de fenêtre #6 Attaque #5</p>
+        <img src='../assets/screenshots/ICMPFlood_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Définir l'intervalle (en millisecondes) entre<br>l'envoi de paquets à la cible.</td>
+                    <td><b>2.</b> Définit le délai d'attente de la connexion actuelle.</td></tr>
+                <tr><td><b>3.</b> Définit la taille du tampon dans le paquet.</td>
+                    <td><b>4.</b> La quantité de threads que l'application doit utiliser pour attaquer la cible</td></tr>
+                <tr><td><b>5.</b> Démarre/arrête l'attaque</td>
+                    <td><b>6.</b> Paquets envoyés avec succès</td></tr>
+                <tr><td><b>7.</b> Paquets dont l'envoi a échoué</td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+            <li><i>(#7) Échec est le seul objet d'état qui augmente</i>: Peut-être que votre cible est en panne, avez-vous essayé de <a href='#targetinfo'>pointer</a> (Fenêtre Section #5-5) celle-ci ? Ou <a href='#targetinfo'>l'ouvrir dans un navigateur?</a> (Fenêtre Section #5-6) Si cela a été vérifié, essayez d'augmenter l'intervalle (#1)/timeout (#2)</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='slowloris'>
+        <h2>Attaque - Slowloris</h2><p>Section de la fenêtre #6 Attaque #6</p><p>
+        <img src='../assets/screenshots/Slowloris_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Définir l'intervalle (en millisecondes) entre<br>l'envoi de paquets à la cible.</td>
+                    <td><b>2.</b> La quantité de threads que l'application doit utiliser pour attaquer la cible</td></tr>
+                <tr><td><b>3.</b> Démarre/arrête l'attaque</td><td><b>4.</b> Paquets envoyés avec succès</td></tr>
+                <tr><td><b>4.</b> Paquets envoyés avec succès</td><td><b>6.</b> Paquets dont l'envoi a échoué</td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+            <li><i>(#6) Échec est le seul objet d'état qui augmente</i>: Peut-être que votre cible est en panne, avez-vous essayé de <a href='#targetinfo'>pointer</a> (Fenêtre Section #5-5) celle-ci ? Ou <a href='#targetinfo'>l'ouvrir dans un navigateur?</a> (Section de la fenêtre #5-6) Si cela a été vérifié, essayez d'augmenter l'intervalle (#1)</li>
+            </ul>
+    </div>
+        <hr>
+        <div id='editors'>
+        <h2>Éditeurs</h2><p>Section fenêtre #7</p>
+        <img src='../assets/screenshots/BrowserEditor_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                 <tr><td><b>1.</b> Chemin d'accès à l'emplacement de l'éditeur de texte.<br>Par défaut, c'est le système par défaut du registre.</td>
+                    <td><b>2.</b> Chemin d'accès à l'emplacement si le navigateur web.<br>Par défaut, c'est le système par défaut à partir du registre.</td></tr>
+                <tr><td><b>3.</b> Ouvre le <i>Dialogue de fichier</i> pour choisir l'éditeur de texte utilisé*</td>
+                    <td><b>4.</b> Ouvre le <i>Dialogue de fichier</i> pour choisir le navigateur web utilisé*</td></tr>
+            </tbody>
+        </table>
+            <h3>Erreurs courantes:</h3>
+            <ul>
+            <li><i>Erreur de fichier: Le fichier n'existe pas ou n'est pas un format pris en charge</i>: Le fichier sélectionné est-il un <i>exe</i> découpable ? * Le chemin d'accès existe-t-il ? </li>
+            <li><i>L'éditeur de texte ne veut pas ouvrir le journal (de la section fenêtre #5-6) ; erreurs uniques/multiples, l'éditeur lance vers un nouveau fichier</i>: Certains éditeurs de texte demandent des arguments dans la ligne de chemin, ajoutez-les manuellement (#1). Consultez la documentation de votre éditeur de texte pour plus d'informations</li>
+            <li><i>Le navigateur ne veut pas ouvrir la cible (de la section Fenêtre #4-6) ; erreurs uniques/multiples, le navigateur se lance sur la page d'accueil</i>: Certains navigateurs demandent des arguments dans la ligne path, ajoutez-les manuellement (#2). Consultez la documentation de vos navigateurs pour plus d'informations</li>
+            </ul>
+            <p>*Accepte: exe, .exe, *.exe</p> <p>
+    </div>
+        <hr>
+        <div id='helpabout'>
+        <h2>Aide/Au sujet de</h2><p>Section de fenêtre #8</p>
+        <img src='../assets/screenshots/HelpAbout_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Lance la fenêtre 'Aide'. <b>Court-circuit clavier: F1</b> [Indice: la fenêtre d'aide affiche cette page]</td></tr>
+                <tr><td><b>2.</b> Localisation de la fenêtre 'A propos' <b>Court-circuit clavier: F2</b></tr>
+            </tbody>
+        </table>
+        <sub style='font-size:2px'>Combo breaker?</sub>
+    </div>
+         <hr>
+        <div id='helpwindow'>
+        <h2>Fenêtre d'aide</h2><p>Fenêtre d'aide > Fenêtre Section #8-1</p>
+        <img src='../assets/screenshots/HelpWindow_Numbered.png' width='35%' height='auto'>
+        <h3>Erreurs courantes:</h3>
+            <ul>
+            <li><i>404 Error / File not found error</i>: Essayez à nouveau plus tard. Veuillez <a href='#cl'>nous contacter</a> si le problème persiste.</li>
+            </ul>
+        <p>*Vous êtes ici... 50/50 de comment vous êtes arrivé ici*</p>
+    </div>
+        <hr>
+        <div id='aboutwindow'>
+        <h2>A propos de la fenêtre</h2><p>A propos de la fenêtre > Fenêtre Section #8-2</p>
+        <img src='../assets/screenshots/AboutWindow_Numbered.png' width='auto' height='35%'>
+            <table>
+            <tbody>
+                <tr><td><b>1.</b> Affiche le nom de l'application, la version et le développeur.</td></tr>
+                <tr><td><b>2.</b> Montre les licences en cours d'utilisation. <i>Note: L'utilisation de ce logiciel implique un accord de licence.</i></tr>
+                <tr><td><b>3.</b> Montre les paquets utilisés, et accrédite ceux qui aident à développer/maintenir l'EIB</td></tr>
+                <tr><td><b>4.</b> Indique l'adresse BTC dans laquelle les dons sont acceptés. Merci ! :)</td></tr>
+                <tr><td><b>5.</b> Ouvre le navigateur vers le référentiel d'applications</td></tr>
+            </tbody>
+        </table>
+        <h3>Erreurs courantes:</h3>
+            <ul>
+            <li><i>La fenêtre a mis beaucoup de temps à s'ouvrir</i>: L'application récupère le contenu de la fenêtre depuis le serveur. Le contenu est enregistré dans le registre
+            pour un chargement plus rapide à l'avenir. </li>
+            <li><i>"Échec de la récupération..." / "Failed to retrieve content from server..."</i>: Veuillez essayer d'ouvrir/de rouvrir la fenêtre. Si cela ne fonctionne pas, réessayez dans 10 minutes. Si les problèmes persistent, veuillez <a href='#cl'>nous contacter</a></li>
+            </ul>
+        <p>*Vous êtes ici... 50/50 de comment vous êtes arrivé ici*</p>
+    </div>
+         <hr>
+        <div id='netmon'>
+        <h2>Moniteur réseau</h2><p>Section de fenêtre #9</p>
+        <img src='../assets/screenshots/NetworkMonitor_Numbered.png' width='35%' height='auto'>
+        <table>
+            <tbody>
+                <tr><td><b>1.</b> Les adaptateurs détectés par le moniteur</td>
+                    <td><b>2.</b> État actuel de l'adaptateur sélectionné</td></tr>
+                <tr><td><b>3.</b> Flush DNS (les sorties de résultat dans la fenêtre de journal)<br>Exécute: <i>ipconfig.exe /flushdns</i> </td>
+                    <td><b>4.</b> Renouvelle tous les adaptateurs (les sorties de résultat dans la fenêtre de journal)<br>Exécute: <i>ipconfig.exe /renew</i></tr>
+            </tbody>
+        </table>
+        <h3>Erreurs courantes:</h3>
+            <ul>
+            <li><i>L'adaptateur n'a pas été détecté dans l'application</i>: Vérifiez que l'adaptateur est activé/installé, si c'est le cas: veuillez <a href='#cl'>nous contacter</a> pour demander l'intégration de votre adaptateur.</li>
+            <li><i>La purge des DNS échoue</i>: Vérifiez que l'application est exécutée avec des droits d'administrateur.</li>
+            <li><i>Renew Adapters fails</i>: Vérifiez que l'application est exécutée avec des droits d'administrateur.</li>
+            </ul>
+    </div>
+    <hr>
+    <div id='cl'>
+    <h3>Journaux des modifications</h3>
+        <p><script></script><a href='https://github.com/softbytesize/ISB-Releases/releases/latest' target="_blank" rel="noopener noreferrer">Cliquez ici</a> pour obtenir la dernière version.</p>
+        <ul>
+        <li>Version 0.9.0.0 => Version 1.0.0.0<br>Release: <a href='https://github.com/softbytesize/ISB-Releases/releases/tag/v1.0.0.0'>https://github.com/softbytesize/ISB-Releases/releases/tag/v1.0.0.0</a><br>(2 modifications)<ul><li>Version initiale. Les versions précédentes ne sont pas disponibles.</li><li>Merci :)</li></ul></li>
+        </ul>
+        
+    </div>
+    <hr>
+    <div id='footer'>
+     Copyright 2023 byte[size] Software<br><br>
+
+   Licencié sous la licence Apache, version 2.0 (la "licence");<br>
+   vous ne pouvez pas utiliser ce fichier sauf en conformité avec la Licence.<br>
+   Vous pouvez obtenir une copie de la Licence à l'adresse suivante<br><br>
+
+       <a href='http://www.apache.org/licenses/LICENSE-2.0'>http://www.apache.org/licenses/LICENSE-2.0</a><br><br><br>
+
+   À moins que la loi applicable ne l'exige ou que cela ne fasse l'objet d'un accord écrit, les logiciels<br>..
+   distribué sous la Licence est distribué sur une base "AS IS", <br>
+   SANS GARANTIE OU CONDITION DE QUELQUE NATURE QUE CE SOIT, expresse ou implicite.<br>
+   Voir la Licence pour les termes spécifiques régissant les permissions et<br>
+   les limitations prévues par la Licence.<br>
+    </div>
+    </body>
+</html>
